@@ -1,0 +1,19 @@
+name: Build Pipeline
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone Repository
+        uses: actions/checkout@v2
+      - name: Setup JDK
+        uses: actions/setup-java@v2
+        with:
+          java-version: '17'
+          distribution: zulu
+          cache: 'maven'
+      - name: Build project
+        run: mvn -B package -DskipTests
