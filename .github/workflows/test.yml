@@ -1,0 +1,20 @@
+name: Test Pipeline
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    name: Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone Repository
+        uses: actions/checkout@v2
+      - name: Setup JDK
+        uses: action/setup-java@v2
+        with:
+          java-version: '17'
+          cache: 'maven'
+      - name: Run Tests
+        run: mvn -B test
