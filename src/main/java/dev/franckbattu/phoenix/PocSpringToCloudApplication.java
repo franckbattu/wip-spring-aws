@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PhoenixApplication {
+public class PocSpringToCloudApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PhoenixApplication.class, args);
+		SpringApplication.run(PocSpringToCloudApplication.class, args);
 	}
 
 }
